@@ -39,4 +39,4 @@ helm install \
     --set installCRDs=true
 ```
 
-[Custom PKI Docs]: https://docs.openshift.com/container-platform/4.11/networking/configuring-a-custom-pki.html
+[Custom PKI Docs]: https://docs.openshift.com/container-platform/latest/networking/configuring-a-custom-pki.html
