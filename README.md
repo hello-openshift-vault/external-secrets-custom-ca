@@ -16,7 +16,7 @@ oc new-project external-secrets
 
 2. Create the ca-bundle config map:
 ```bash
-cat << EOF | oc create -f -
+oc create -f - << EOF
 kind: ConfigMap
 apiVersion: v1
 metadata:
