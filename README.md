@@ -35,7 +35,6 @@ helm install \
     external-secrets/external-secrets \
     -f values.yaml \
     -n external-secrets \
-    --create-namespace \
     --set installCRDs=true
 ```
 
