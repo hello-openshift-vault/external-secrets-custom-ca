@@ -1,8 +1,16 @@
 # External Secrets Operator with Custom CA
 
 Use External Secrets Operator against a secret store using a TLS certificate
-signed by a custom certificate authority (CA). This does require that the
-custom CA is trusted by OpenShift (see the OpenShift [Custom PKI Docs]).
+signed by a custom certificate authority (CA).
+
+This method requires that the CA is trusted by OpenShift per the
+[Custom PKI Docs]. If you the Vault server is signed by the OpenShift cluster
+ingress operator (default certificate on a fresh installed cluster), you will
+need to add the ingress-operator TLS certificate to your cluster trust bundle.
+
+**NOTE:** If you do follow the [Custom PKI Docs] steps, you must wait until the
+cluster operators reconcile before deploying External Secrets Operator. Watch
+the cluster operators status with: `watch -d oc get co`
 
 This was specifically tested with Vault but should work for any secret provider
 signed by a custom CA that OpenShift is configured to trust.
